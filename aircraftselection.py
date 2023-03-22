@@ -9,7 +9,9 @@ from dash.dependencies import Input, Output, State
 import dash_table
 
 # Load the data
-acdata = pd.read_excel(r"https://github.com/ylapura/selectac/blob/main/AC%20Info%20for%20Niya_pivot.xlsx", sheet_name="DATA")
+# acdata = pd.read_excel(r"https://github.com/ylapura/selectac/blob/main/AC%20Info%20for%20Niya_pivot.xlsx", sheet_name="DATA")
+acdata = pd.read_excel("https://github.com/ylapura/selectac/blob/main/AC%20Info%20for%20Niya_pivot.xlsx?raw=true", sheet_name="DATA", engine="openpyxl")
+
 acdata = acdata.sort_values('Age', ascending=False)
 
 # Create the dropdown menu
