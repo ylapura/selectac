@@ -9,7 +9,7 @@ from dash.dependencies import Input, Output, State
 import dash_table
 
 # Load the data
-acdata = pd.read_excel(r"/Users/yvettelapura/Downloads/AC Info for Niya_pivot.xlsx", sheet_name="DATA")
+acdata = pd.read_excel(r"https://github.com/ylapura/selectac/blob/main/AC%20Info%20for%20Niya_pivot.xlsx", sheet_name="DATA")
 acdata = acdata.sort_values('Age', ascending=False)
 
 # Create the dropdown menu
@@ -53,6 +53,7 @@ app_layout = html.Div(children=[
 
 # Create the app
 app = dash.Dash(__name__)
+server = app.server
 app.layout = app_layout
 
 # Define the callback function to update the plots when the dropdown or bar chart is changed
